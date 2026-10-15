@@ -47,18 +47,38 @@
     <!-- Main Content -->
     <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- Hero Section -->
-        <div class="text-center max-w-3xl mx-auto mb-14">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 text-xs font-semibold mb-4 border border-amber-200 dark:border-amber-800/50">
-                <span>Simulador Interactivo de Evaluación</span>
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <div class="inline-flex flex-wrap items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/80 dark:bg-blue-950/40 text-blue-900 dark:text-blue-300 text-xs font-semibold mb-4 border border-blue-200 dark:border-blue-800/60">
+                <span>Catálogo de Evaluaciones</span>
                 <span>•</span>
-                <span>Escala 20 Puntos</span>
+                <span>Modelo de Examen: 05/11/2024</span>
+                <span>•</span>
+                <span>Escala Total 20 Puntos</span>
             </div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
                 Primer Parcial de <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Sistemas de Bases de Datos</span>
             </h1>
-            <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                Entorno de práctica y autoevaluación basado en la pauta oficial de corrección de la cátedra. Evalúa tus conocimientos en modelado conceptual E-R, diseño lógico relacional, normalización y reglas de integridad.
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                Simulador interactivo basado en el modelo oficial de examen de la cátedra de la <strong>Prof. Lúcia Isabel Cardoso M.</strong> (UCAB, Fecha: <strong>05/11/2024</strong>).
             </p>
+
+            <!-- Notification banner about extensible catalog & questions -->
+            <div class="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 rounded-xl p-4 text-xs sm:text-sm text-amber-900 dark:text-amber-200 text-left flex items-start gap-3">
+                <svg class="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div class="space-y-1">
+                    <p class="font-semibold text-amber-950 dark:text-amber-100">
+                        Nota de la plataforma y alcance del simulador:
+                    </p>
+                    <p>
+                        Este simulador contiene actualmente el <strong>Modelo 1 (Primer Parcial 05/11/2024)</strong>. La arquitectura del sistema está diseñada como un <strong>catálogo extensible</strong> que admite incorporar nuevos exámenes completos, así como un <strong>repositorio libre de preguntas</strong> independientes para entrenamiento.
+                    </p>
+                    <p class="text-amber-800 dark:text-amber-300 text-xs">
+                        * De los 20 puntos totales de este parcial: <strong>7.0 puntos</strong> corresponden a la teoría interactiva en la web (Selección y Pareo), y <strong>13.0 puntos</strong> corresponden a los ejercicios prácticos de desarrollo presencial en hoja.
+                    </p>
+                </div>
+            </div>
         </div>
 
         <!-- Mode Selector & CTA Card -->
@@ -110,29 +130,48 @@
                 <!-- Action Box -->
                 <div class="lg:col-span-5 bg-slate-50 dark:bg-slate-800/60 rounded-xl p-6 border border-slate-200/80 dark:border-slate-700/60 flex flex-col justify-between space-y-6">
                     <div>
-                        <h3 class="font-semibold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wider">Resumen del Examen</h3>
-                        <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex justify-between">
-                                <span>Parte I: Selección Simple/Múltiple</span>
-                                <span class="font-semibold text-slate-900 dark:text-white">3.0 ptos (6 ítems)</span>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider">Desglose del Parcial</h3>
+                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">Escala 20 Puntos</span>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex justify-between items-center">
+                                <span class="flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    <span>Parte I: Selección Simple</span>
+                                </span>
+                                <span class="font-semibold text-slate-900 dark:text-white">3.0 ptos (Web)</span>
                             </li>
-                            <li class="flex justify-between">
-                                <span>Parte II: Pareo Conceptual</span>
-                                <span class="font-semibold text-slate-900 dark:text-white">4.0 ptos (8 ítems)</span>
+                            <li class="flex justify-between items-center">
+                                <span class="flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    <span>Parte II: Pareo Conceptual</span>
+                                </span>
+                                <span class="font-semibold text-slate-900 dark:text-white">4.0 ptos (Web)</span>
                             </li>
-                            <li class="flex justify-between text-slate-400 dark:text-slate-500">
-                                <span>Parte III: Ejercicio Práctico (E-R / Relacional)</span>
-                                <span class="italic">13.0 ptos (Próximamente)</span>
+                            <li class="flex justify-between items-center text-slate-500 dark:text-slate-400">
+                                <span class="flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                    <span>Parte III: Traducir Conceptual a Lógico</span>
+                                </span>
+                                <span class="font-medium text-amber-700 dark:text-amber-400">5.0 ptos (Presencial)</span>
                             </li>
-                            <li class="pt-2 border-t border-slate-200 dark:border-slate-700 flex justify-between font-bold text-slate-900 dark:text-white">
-                                <span>Total Teoría Disponible</span>
+                            <li class="flex justify-between items-center text-slate-500 dark:text-slate-400">
+                                <span class="flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                    <span>Parte IV: Crear BD desde Reporte</span>
+                                </span>
+                                <span class="font-medium text-amber-700 dark:text-amber-400">8.0 ptos (Presencial)</span>
+                            </li>
+                            <li class="pt-2 border-t border-slate-200 dark:border-slate-700 flex justify-between font-bold text-slate-900 dark:text-white text-sm">
+                                <span>Total Evaluado en Simulador</span>
                                 <span class="text-blue-600 dark:text-blue-400">7.0 / 20.0 ptos</span>
                             </li>
                         </ul>
                     </div>
 
                     <a id="start-exam-btn" href="examen.html?modo=practica" class="w-full py-3.5 px-6 rounded-xl bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-semibold text-center shadow-lg shadow-blue-700/20 transition flex items-center justify-center space-x-2 group">
-                        <span>Comenzar Teoría del Parcial</span>
+                        <span>Comenzar Teoría en Línea (7.0 Ptos)</span>
                         <svg class="w-5 h-5 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
@@ -141,57 +180,103 @@
             </div>
         </div>
 
-        <!-- Structure Breakdown Cards -->
-        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Estructura de Contenidos Evaluados</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
+        <!-- Structure Breakdown Cards (All 4 parts of the official exam) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+            <div>
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white">Estructura Oficial del Examen (20 Puntos)</h2>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Primer Parcial • Prof. Lúcia Isabel Cardoso M. (05/11/2024)</p>
+            </div>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold self-start sm:self-auto">
+                2 Módulos Web + 2 Módulos Presenciales
+            </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1: Selección Simple -->
             <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
                 <div>
-                    <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 flex items-center justify-center font-bold mb-4">
-                        I
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 flex items-center justify-center font-bold text-sm">
+                            I
+                        </div>
+                        <span class="text-[11px] px-2 py-0.5 rounded-full font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
+                            En Simulador Web
+                        </span>
                     </div>
-                    <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Selección Conceptual</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
-                        6 preguntas enfocadas en ventajas del Modelo Relacional, supertipos/subtipos, Segunda Forma Normal (2FN), objetivos de la normalización, arcos exclusivos y Modelo E-R.
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">Selección Simple</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">
+                        6 preguntas (ventajas relacionales, supertipos, 2FN, normalización, arcos XOR y Modelo E-R).
                     </p>
                 </div>
-                <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-emerald-600 dark:text-emerald-400">
-                    <span>Disponible en examen.html</span>
-                    <span>0.5 ptos c/u</span>
+                <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-900 dark:text-white">
+                    <span class="text-emerald-600 dark:text-emerald-400">Interactivo</span>
+                    <span>3.0 ptos</span>
                 </div>
             </div>
 
-            <!-- Card 2 -->
+            <!-- Card 2: Pareo Conceptual -->
             <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
                 <div>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-400 flex items-center justify-center font-bold mb-4">
-                        II
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-400 flex items-center justify-center font-bold text-sm">
+                            II
+                        </div>
+                        <span class="text-[11px] px-2 py-0.5 rounded-full font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
+                            En Simulador Web
+                        </span>
                     </div>
-                    <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Pareo de Declaraciones</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
-                        Asociación entre 13 conceptos clave (Transacciones, Nivel Lógico, Reglas de integridad explícitas e implícitas, Entidades, FKs, Relaciones) y 8 casos prácticos.
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">Pareo de Conceptos</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">
+                        8 premisas para asociar con un banco de 13 términos (transacciones, nivel lógico, reglas de integridad, entidades, etc.).
                     </p>
                 </div>
-                <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-emerald-600 dark:text-emerald-400">
-                    <span>Disponible en examen.html</span>
-                    <span>0.5 ptos c/u</span>
+                <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-900 dark:text-white">
+                    <span class="text-emerald-600 dark:text-emerald-400">Interactivo</span>
+                    <span>4.0 ptos</span>
                 </div>
             </div>
 
-            <!-- Card 3 (Placeholder for Practical section) -->
-            <div class="bg-slate-100/70 dark:bg-slate-900/50 p-6 rounded-xl border border-dashed border-slate-300 dark:border-slate-700 flex flex-col justify-between">
+            <!-- Card 3: Traducción Conceptual a Lógico -->
+            <div class="bg-slate-50 dark:bg-slate-900/60 p-6 rounded-xl border border-dashed border-amber-300 dark:border-amber-800/80 shadow-sm flex flex-col justify-between">
                 <div>
-                    <div class="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold mb-4">
-                        III
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold text-sm">
+                            III
+                        </div>
+                        <span class="text-[11px] px-2 py-0.5 rounded-full font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300">
+                            Presencial • En Hoja
+                        </span>
                     </div>
-                    <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Caso Práctico de Diseño</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
-                        Módulo preparado para integrar el enunciado práctico del reverso de la hoja (Modelado Entidad-Relación, paso a tablas o normalización de relaciones).
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">Traducción a Lógico</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">
+                        Transformar diagrama conceptual E-R a tablas relacionales, propagar Foreign Keys (FK), aplicar normalización y claves primarias.
                     </p>
                 </div>
-                <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-amber-600 dark:text-amber-400">
-                    <span>Espacio reservado (Modular)</span>
-                    <span>13.0 ptos</span>
+                <div class="pt-3 border-t border-amber-200 dark:border-amber-800/60 flex items-center justify-between text-xs font-semibold text-amber-800 dark:text-amber-300">
+                    <span>No evaluable en web</span>
+                    <span>5.0 ptos</span>
+                </div>
+            </div>
+
+            <!-- Card 4: Creación de BD a partir de Reporte -->
+            <div class="bg-slate-50 dark:bg-slate-900/60 p-6 rounded-xl border border-dashed border-amber-300 dark:border-amber-800/80 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold text-sm">
+                            IV
+                        </div>
+                        <span class="text-[11px] px-2 py-0.5 rounded-full font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300">
+                            Presencial • En Hoja
+                        </span>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">BD desde Reporte</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">
+                        Ingeniería inversa de una factura/reporte físico de negocio: extracción de entidades, atributos, cardinalidades y esquema final.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-amber-200 dark:border-amber-800/60 flex items-center justify-between text-xs font-semibold text-amber-800 dark:text-amber-300">
+                    <span>No evaluable en web</span>
+                    <span>8.0 ptos</span>
                 </div>
             </div>
         </div>

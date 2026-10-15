@@ -58,7 +58,20 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+        <!-- Exam Model & Catalog Info Bar -->
+        <div class="p-3.5 px-4 rounded-xl bg-blue-50/70 dark:bg-blue-950/30 border border-blue-200/80 dark:border-blue-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2 text-blue-900 dark:text-blue-200">
+                <span class="px-2 py-0.5 rounded font-bold bg-blue-200/70 dark:bg-blue-900/60 text-blue-800 dark:text-blue-300 uppercase tracking-wider text-[10px]">Modelo 1</span>
+                <span><strong>Primer Parcial SBD:</strong> Prof. Lúcia Isabel Cardoso M. • UCAB (Fecha: 05/11/2024)</span>
+            </div>
+            <div class="text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                <span>Catálogo Extensible</span>
+                <span>•</span>
+                <span class="font-semibold text-blue-700 dark:text-blue-300">Teoría: 7.0 / 20.0 ptos</span>
+            </div>
+        </div>
 
         <!-- Score Banner (Hidden until graded or shown dynamically) -->
         <div id="score-banner" class="hidden rounded-2xl p-6 border shadow-lg transition-all">
@@ -127,16 +140,72 @@
             </div>
         </section>
 
-        <!-- PARTE III: Placeholder Modular para la Práctica -->
-        <section id="practica-placeholder" class="rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-800 p-6 sm:p-8 text-center bg-slate-100/50 dark:bg-slate-900/30">
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 mb-2">
-                Parte III • 13.0 Puntos (Módulo Práctico)
-            </span>
-            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Espacio reservado para la Parte Práctica</h3>
-            <p class="text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto mt-1">
-                Este bloque está listo para integrar el ejercicio de modelado Entidad-Relación o Normalización del reverso del examen cuando desees añadirlo.
-            </p>
-        </section>
+        <!-- Módulos Prácticos Presenciales (Parte III y IV para completar los 20 Puntos Oficiales) -->
+        <div class="space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                        <span>Ejercicios Prácticos del Examen Físico</span>
+                        <span class="text-xs px-2.5 py-0.5 rounded-full font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300">
+                            13.0 Puntos Presenciales
+                        </span>
+                    </h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                        Completaron la escala oficial de 20 puntos en el examen presencial de la Prof. Lúcia Isabel Cardoso M. (no evaluables en la web).
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- PARTE III: Traducción Conceptual a Lógico -->
+                <section class="rounded-2xl border-2 border-dashed border-amber-300 dark:border-amber-800/70 p-6 bg-amber-50/30 dark:bg-amber-950/20 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+                                Parte III • Valor: 5.0 Puntos
+                            </span>
+                            <span class="text-[11px] px-2 py-0.5 rounded-full font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300">
+                                Presencial • En Hoja
+                            </span>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">
+                            Traducción de Modelo Conceptual a Lógico
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            Conversión del diagrama Entidad-Relación al esquema lógico relacional: derivación de tablas, propagación de claves primarias a llaves foráneas (FK), manejo de arcos/subtipos y verificación de 1FN, 2FN y 3FN.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-amber-200/80 dark:border-amber-900/50 flex items-center justify-between text-xs text-amber-800 dark:text-amber-300 font-medium">
+                        <span>Resolución manual en papel</span>
+                        <span class="font-bold">5.0 ptos</span>
+                    </div>
+                </section>
+
+                <!-- PARTE IV: Creación de BD a partir de Reporte -->
+                <section class="rounded-2xl border-2 border-dashed border-amber-300 dark:border-amber-800/70 p-6 bg-amber-50/30 dark:bg-amber-950/20 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+                                Parte IV • Valor: 8.0 Puntos
+                            </span>
+                            <span class="text-[11px] px-2 py-0.5 rounded-full font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300">
+                                Presencial • En Hoja
+                            </span>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">
+                            Creación de Base de Datos a partir de un Reporte
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            Ingeniería inversa de requerimientos a partir de un reporte impreso o factura de negocio: identificación de entidades no evidentes, detección de redundancias y formulación del modelo conceptual y tablas resultantes.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-amber-200/80 dark:border-amber-900/50 flex items-center justify-between text-xs text-amber-800 dark:text-amber-300 font-medium">
+                        <span>Resolución manual en papel</span>
+                        <span class="font-bold">8.0 ptos</span>
+                    </div>
+                </section>
+            </div>
+        </div>
 
         <!-- Action Bar -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 pb-12">

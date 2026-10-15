@@ -242,8 +242,8 @@
                 banner.className = "rounded-2xl p-6 border shadow-lg transition-all bg-rose-50 border-rose-300 text-rose-950 dark:bg-rose-950/40 dark:border-rose-800 dark:text-rose-100";
             }
 
-            headline.textContent = `Nota de Teoría: ${totalScore.toFixed(2)} / 7.00 ptos`;
-            subtext.textContent = `Desglose: Parte I (Selección): ${scorePart1.toFixed(2)} / 3.00 ptos • Parte II (Pareo): ${scorePart2.toFixed(2)} / 4.00 ptos. Revisa cada pregunta abajo para ver la explicación de la cátedra.`;
+            headline.textContent = `Nota de Teoría: ${totalScore.toFixed(2)} / 7.00 ptos (Escala Oficial: 20 Ptos)`;
+            subtext.textContent = `Desglose en Simulador: Parte I (Selección): ${scorePart1.toFixed(2)} / 3.00 ptos • Parte II (Pareo): ${scorePart2.toFixed(2)} / 4.00 ptos. (Los 13.0 ptos restantes corresponden a los ejercicios prácticos de desarrollo presencial: 5.0 pts de traducción E-R a lógico y 8.0 pts de creación de BD desde reporte).`;
         }
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
