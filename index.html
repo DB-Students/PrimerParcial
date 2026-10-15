@@ -81,97 +81,139 @@
             </div>
         </div>
 
-        <!-- Mode Selector & CTA Card -->
-        <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 p-6 sm:p-10 mb-14">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Configura tu sesión de estudio</h2>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">
-                        Selecciona cómo deseas resolver el parcial. Tu elección se enviará automáticamente al módulo del examen (<code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400 font-mono text-xs">examen.html</code>).
-                    </p>
+        <!-- Configuration & Study Mode Selector -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 mb-10">
+            <div class="max-w-3xl mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Paso 1 • Configura la dinámica</span>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">Elige tu modo de resolución</h2>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+                    El modo seleccionado aplicará automáticamente tanto al Examen Oficial como al Banco de Preguntas.
+                </p>
+            </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="mode-selector">
-                        <!-- Modo Práctica -->
-                        <label class="relative flex flex-col p-4 border-2 rounded-xl cursor-pointer transition-all border-blue-600 bg-blue-50/40 dark:bg-blue-950/20 dark:border-blue-500" id="card-practica">
-                            <input type="radio" name="exam_mode" value="practica" class="sr-only" checked onchange="updateMode('practica')">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                                    Modo Práctica
-                                </span>
-                                <span class="w-4 h-4 rounded-full border-2 border-blue-600 flex items-center justify-center">
-                                    <span class="w-2 h-2 rounded-full bg-blue-600" id="dot-practica"></span>
-                                </span>
-                            </div>
-                            <p class="text-xs text-slate-600 dark:text-slate-400">
-                                Comprueba cada pregunta al instante con explicaciones detalladas según la corrección de la profesora.
-                            </p>
-                        </label>
-
-                        <!-- Modo Evaluación -->
-                        <label class="relative flex flex-col p-4 border-2 rounded-xl cursor-pointer transition-all border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700" id="card-evaluacion">
-                            <input type="radio" name="exam_mode" value="evaluacion" class="sr-only" onchange="updateMode('evaluacion')">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    Modo Simulacro
-                                </span>
-                                <span class="w-4 h-4 rounded-full border-2 border-slate-400 flex items-center justify-center">
-                                    <span class="w-2 h-2 rounded-full bg-transparent" id="dot-evaluacion"></span>
-                                </span>
-                            </div>
-                            <p class="text-xs text-slate-600 dark:text-slate-400">
-                                Cronómetro activo y sin pistas. La nota final y las correcciones se revelan únicamente al entregar.
-                            </p>
-                        </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="mode-selector">
+                <!-- Modo Práctica -->
+                <label class="relative flex flex-col p-4 border-2 rounded-xl cursor-pointer transition-all border-blue-600 bg-blue-50/40 dark:bg-blue-950/20 dark:border-blue-500" id="card-practica">
+                    <input type="radio" name="exam_mode" value="practica" class="sr-only" checked onchange="updateMode('practica')">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                            Modo Práctica (Feedback Inmediato)
+                        </span>
+                        <span class="w-4 h-4 rounded-full border-2 border-blue-600 flex items-center justify-center">
+                            <span class="w-2 h-2 rounded-full bg-blue-600" id="dot-practica"></span>
+                        </span>
                     </div>
-                </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400">
+                        Comprueba cada pregunta al instante con explicaciones detalladas según la corrección de la profesora.
+                    </p>
+                </label>
 
-                <!-- Action Box -->
-                <div class="lg:col-span-5 bg-slate-50 dark:bg-slate-800/60 rounded-xl p-6 border border-slate-200/80 dark:border-slate-700/60 flex flex-col justify-between space-y-6">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="font-semibold text-slate-900 dark:text-white text-sm uppercase tracking-wider">Desglose del Parcial</h3>
-                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">Escala 20 Puntos</span>
+                <!-- Modo Evaluación -->
+                <label class="relative flex flex-col p-4 border-2 rounded-xl cursor-pointer transition-all border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700" id="card-evaluacion">
+                    <input type="radio" name="exam_mode" value="evaluacion" class="sr-only" onchange="updateMode('evaluacion')">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Modo Simulacro (Evaluación)
+                        </span>
+                        <span class="w-4 h-4 rounded-full border-2 border-slate-400 flex items-center justify-center">
+                            <span class="w-2 h-2 rounded-full bg-transparent" id="dot-evaluacion"></span>
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400">
+                        Cronómetro activo y sin pistas inmediatas. El porcentaje o nota y las correcciones se revelan al calificar.
+                    </p>
+                </label>
+            </div>
+        </div>
+
+        <!-- Step 2: Dual Choice Cards (Examen Oficial vs Banco Teórico) -->
+        <div class="mb-14">
+            <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Paso 2 • Selecciona la evaluación</span>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">¿Qué deseas resolver hoy?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- OPICIÓN 1: Examen Oficial -->
+                <div class="bg-white dark:bg-slate-900 rounded-2xl border-2 border-blue-500/80 shadow-md p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300">
+                                Examen Oficial UCAB
+                            </span>
+                            <span class="text-xs font-mono font-bold text-blue-700 dark:text-blue-400">Escala: 20 Puntos</span>
                         </div>
-                        <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex justify-between items-center">
-                                <span class="flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                                    <span>Parte I: Selección Simple</span>
-                                </span>
-                                <span class="font-semibold text-slate-900 dark:text-white">3.0 ptos (Web)</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span class="flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                                    <span>Parte II: Pareo Conceptual</span>
-                                </span>
-                                <span class="font-semibold text-slate-900 dark:text-white">4.0 ptos (Web)</span>
-                            </li>
-                            <li class="flex justify-between items-center text-slate-500 dark:text-slate-400">
-                                <span class="flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                                    <span>Parte III: Traducir Conceptual a Lógico</span>
-                                </span>
-                                <span class="font-medium text-amber-700 dark:text-amber-400">5.0 ptos (Presencial)</span>
-                            </li>
-                            <li class="flex justify-between items-center text-slate-500 dark:text-slate-400">
-                                <span class="flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                                    <span>Parte IV: Crear BD desde Reporte</span>
-                                </span>
-                                <span class="font-medium text-amber-700 dark:text-amber-400">8.0 ptos (Presencial)</span>
-                            </li>
-                            <li class="pt-2 border-t border-slate-200 dark:border-slate-700 flex justify-between font-bold text-slate-900 dark:text-white text-sm">
-                                <span>Total Evaluado en Simulador</span>
-                                <span class="text-blue-600 dark:text-blue-400">7.0 / 20.0 ptos</span>
-                            </li>
-                        </ul>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                            Primer Parcial Oficial (05/11/2024)
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            El modelo de examen real impartido por la <strong>Prof. Lúcia Isabel Cardoso M.</strong> con pauta de corrección y respuestas originales.
+                        </p>
+
+                        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 text-xs space-y-2">
+                            <div class="flex justify-between text-slate-700 dark:text-slate-300">
+                                <span>Parte I: Selección Simple</span>
+                                <strong class="text-slate-900 dark:text-white">6 preguntas (3.0 pts)</strong>
+                            </div>
+                            <div class="flex justify-between text-slate-700 dark:text-slate-300">
+                                <span>Parte II: Pareo Conceptual</span>
+                                <strong class="text-slate-900 dark:text-white">8 premisas (4.0 pts)</strong>
+                            </div>
+                            <div class="flex justify-between text-slate-500 dark:text-slate-400 pt-1.5 border-t border-slate-200 dark:border-slate-700">
+                                <span>Ejercicios Presenciales en Hoja</span>
+                                <span>13.0 pts presenciales</span>
+                            </div>
+                        </div>
                     </div>
 
                     <a id="start-exam-btn" href="examen.html?modo=practica" class="w-full py-3.5 px-6 rounded-xl bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-semibold text-center shadow-lg shadow-blue-700/20 transition flex items-center justify-center space-x-2 group">
-                        <span>Comenzar Teoría en Línea (7.0 Ptos)</span>
+                        <span>Rendir Examen Oficial (7.0 Ptos)</span>
+                        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- OPCIÓN 2: Banco Extendido de Preguntas -->
+                <div class="bg-white dark:bg-slate-900 rounded-2xl border-2 border-indigo-500/80 shadow-md p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300">
+                                Dataset Completo
+                            </span>
+                            <span class="text-xs font-mono font-bold text-indigo-700 dark:text-indigo-400">Escala: Base 100%</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                            Banco Teórico y Casos de Estudio
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Batería ampliada con todos los temas evaluables: Notación Barker, dependencias funcionales, 1FN/2FN/3FN, SQL DDL/DML, arquitectura física y usabilidad ISO.
+                        </p>
+
+                        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 text-xs space-y-2">
+                            <div class="flex justify-between text-slate-700 dark:text-slate-300">
+                                <span>1. Selección Simple y Conceptual</span>
+                                <strong class="text-slate-900 dark:text-white">25 preguntas</strong>
+                            </div>
+                            <div class="flex justify-between text-slate-700 dark:text-slate-300">
+                                <span>2. Análisis Rápido (Verdadero/Falso)</span>
+                                <strong class="text-slate-900 dark:text-white">3 preguntas</strong>
+                            </div>
+                            <div class="flex justify-between text-slate-700 dark:text-slate-300">
+                                <span>3. Pareo de Conceptos (2 Baterías)</span>
+                                <strong class="text-slate-900 dark:text-white">20 declaraciones</strong>
+                            </div>
+                            <div class="flex justify-between text-amber-700 dark:text-amber-400 pt-1.5 border-t border-slate-200 dark:border-slate-700">
+                                <span>4. Casos de Estudio y 3FN</span>
+                                <strong>6 fichas técnicas</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a id="start-bank-btn" href="banco.html?modo=practica" class="w-full py-3.5 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white font-semibold text-center shadow-lg shadow-indigo-600/20 transition flex items-center justify-center space-x-2 group">
+                        <span>Entrenar Banco Teórico (Base 100%)</span>
                         <svg class="w-5 h-5 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
@@ -286,7 +328,7 @@
     <footer class="border-t border-slate-200 dark:border-slate-800 py-6 mt-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-4">
             <p>Basado en el Primer Parcial de Sistemas de Bases de Datos (05/11/2024) - UCAB.</p>
-            <p>Arquitectura modular: <code class="font-mono">index.html</code> → <code class="font-mono">examen.html</code></p>
+            <p>Arquitectura modular: <code class="font-mono">index.html</code> → <code class="font-mono">examen.html</code> (Examen Oficial) & <code class="font-mono">banco.html</code> (Banco Extendido)</p>
         </div>
     </footer>
 </body>
